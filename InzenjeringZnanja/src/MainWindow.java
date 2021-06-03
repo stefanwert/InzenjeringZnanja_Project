@@ -1,12 +1,10 @@
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.File;
-import java.util.ArrayList;
-import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,7 +24,7 @@ public class MainWindow extends JFrame {
 	public MainWindow() {
 		Toolkit t = Toolkit.getDefaultToolkit();
 		Dimension dimenzije = t.getScreenSize();
-		setSize(dimenzije.width * 3 / 4, dimenzije.height * 3 / 4);
+		setSize(dimenzije.width * 5 / 6, dimenzije.height * 5 / 6);
 
 		setLocationRelativeTo(null);
 
@@ -40,11 +38,19 @@ public class MainWindow extends JFrame {
 		JPanel zaDugmice = new JPanel();
 		JButton izlistavanjeNapada = new JButton("Izlistaj sve napade");
 		JButton dodavanjeNapada = new JButton("Dodaj novi napad");
+		
+		izlistavanjeNapada.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				tableOfAttacks();
+			}
+		});
+		
 		zaDugmice.add(izlistavanjeNapada);
 		zaDugmice.add(dodavanjeNapada);
 		this.add(zaDugmice, BorderLayout.NORTH);
-        
-        tableOfAttacks();
         
 		StatusBar statusBar = new StatusBar();
 		c.add(statusBar, BorderLayout.SOUTH);
@@ -54,14 +60,13 @@ public class MainWindow extends JFrame {
 	}
 	
 	private static void tableOfAttacks() {
-        // Create and set up the window.
         JFrame frame = new JFrame("Table of attacks");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Create and set up the content pane.
         T1Data newContentPane = new T1Data();
         frame.setContentPane(newContentPane);
         // Display the window.
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 	

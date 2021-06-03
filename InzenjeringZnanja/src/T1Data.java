@@ -15,14 +15,14 @@ public class T1Data extends JPanel {
     public T1Data() {
         super(new BorderLayout(3, 3));
         this.table = new JTable(new TableOfAttacks());
-        this.table.setPreferredScrollableViewportSize(new Dimension(700, 70));
+        this.table.setPreferredScrollableViewportSize(new Dimension(750, 350));
         this.table.setFillsViewportHeight(true);
         JPanel ButtonOpen = new JPanel(new FlowLayout(FlowLayout.CENTER));
         add(ButtonOpen, BorderLayout.SOUTH);
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
-        // add a nice border
         setBorder(new EmptyBorder(5, 5, 5, 5));
+        
         ReadingCSVFile readingCSVFile = new ReadingCSVFile();
         TableOfAttacks tableOfAttacks = new TableOfAttacks();
         this.table.setModel(tableOfAttacks);
