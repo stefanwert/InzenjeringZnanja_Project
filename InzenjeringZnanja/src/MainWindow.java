@@ -48,6 +48,17 @@ public class MainWindow extends JFrame {
 			}
 		});
 		
+		dodavanjeNapada.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				AddingNewAttack dialogNewAttack = new AddingNewAttack();
+				dialogNewAttack.setVisible(true);
+				
+			}
+		});
+		
 		zaDugmice.add(izlistavanjeNapada);
 		zaDugmice.add(dodavanjeNapada);
 		this.add(zaDugmice, BorderLayout.NORTH);
