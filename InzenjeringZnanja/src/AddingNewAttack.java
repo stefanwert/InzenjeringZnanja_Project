@@ -4,12 +4,12 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class AddingNewAttack extends JDialog {
@@ -21,11 +21,10 @@ public class AddingNewAttack extends JDialog {
 	private JLabel canFollowLabel;
 	private JTextField canFollowTF;
 	private JLabel domainsOfAttacksLabel;
-	private ButtonGroup domainsOfAttacksButton;
 	private JLabel mitigationsLabel;
-	private JTextField mitigationsTF;
 	private JLabel weaknessesLabel;
-	private JTextField weaknessesTF;
+	private JTextArea mitigationsTA;
+	private JTextArea weaknessTA;
 	
 	private JButton applyButton;
 	private JButton cancelButton;
@@ -39,7 +38,7 @@ public class AddingNewAttack extends JDialog {
 		
 		addingAttackPanel.setBackground(Color.LIGHT_GRAY);
 		setModal(true);
-		this.setSize(400, 500);
+		this.setSize(400, 450);
 		setLocationRelativeTo(null);
 		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -54,25 +53,22 @@ public class AddingNewAttack extends JDialog {
 		nameLabel.setPreferredSize(new Dimension(110, 20));
 		parentOfLabel.setPreferredSize(new Dimension(110, 20));
 		canFollowLabel.setPreferredSize(new Dimension(110, 20));
-		domainsOfAttacksLabel.setPreferredSize(new Dimension(110, 20));
+		domainsOfAttacksLabel.setPreferredSize(new Dimension(340, 20));
 		mitigationsLabel.setPreferredSize(new Dimension(110, 20));
 		weaknessesLabel.setPreferredSize(new Dimension(110, 20));
 		
 		nameTF = new JTextField(20);
 		parentOfTF = new JTextField(20);
 		canFollowTF = new JTextField(20);
-		mitigationsTF = new JTextField(20);
-		weaknessesTF = new JTextField(20);
+		mitigationsTA = new JTextArea(4, 20);
+		mitigationsTA.setLineWrap(true);
+		weaknessTA = new JTextArea(4, 20);
+		weaknessTA.setLineWrap(true);
 		
-		domainsOfAttacksButton = new ButtonGroup();
 		JRadioButton softwareRB = new JRadioButton("Software");
 		JRadioButton hardwareRB = new JRadioButton("Hardware");
 		JRadioButton communicationsRB = new JRadioButton("Communications");
 		JRadioButton socialEngineeringRB = new JRadioButton("Social Engineering");
-		domainsOfAttacksButton.add(softwareRB);
-		domainsOfAttacksButton.add(hardwareRB);
-		domainsOfAttacksButton.add(communicationsRB);
-		domainsOfAttacksButton.add(socialEngineeringRB);
 		
 		addingAttackPanel.add(nameLabel);
 		addingAttackPanel.add(nameTF);
@@ -80,15 +76,15 @@ public class AddingNewAttack extends JDialog {
 		addingAttackPanel.add(parentOfTF);
 		addingAttackPanel.add(canFollowLabel);
 		addingAttackPanel.add(canFollowTF);
+		addingAttackPanel.add(mitigationsLabel);
+		addingAttackPanel.add(mitigationsTA);
+		addingAttackPanel.add(weaknessesLabel);
+		addingAttackPanel.add(weaknessTA);
 		addingAttackPanel.add(domainsOfAttacksLabel);
 		addingAttackPanel.add(softwareRB);
 		addingAttackPanel.add(hardwareRB);
 		addingAttackPanel.add(communicationsRB);
 		addingAttackPanel.add(socialEngineeringRB);
-		addingAttackPanel.add(mitigationsLabel);
-		addingAttackPanel.add(mitigationsTF);
-		addingAttackPanel.add(weaknessesLabel);
-		addingAttackPanel.add(weaknessesTF);
 		
 		applyButton = new JButton("Save");
 		cancelButton = new JButton("Cancel");
