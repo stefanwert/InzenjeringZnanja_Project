@@ -53,10 +53,10 @@ public class AddingNewAttack extends JDialog {
 		
 		warning = new JLabel("*** If there are not datas for some feature, just leave it blank.");
 		warning.setFont(new Font("Verdana", Font.PLAIN, 11));
-		nameLabel = new JLabel("Name of attack: ");
+		nameLabel = new JLabel("Name of attack: *");
 		parentOfLabel = new JLabel("Parent of: ");
 		canFollowLabel = new JLabel("Can follow: ");
-		domainsOfAttacksLabel = new JLabel("Domains od attack: ");
+		domainsOfAttacksLabel = new JLabel("Domains od attack: *");
 		mitigationsLabel = new JLabel("Mitigations: ");
 		weaknessesLabel = new JLabel("Weaknesses: ");
 		
