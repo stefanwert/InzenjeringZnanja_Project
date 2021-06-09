@@ -52,16 +52,44 @@ public class MainWindow extends JFrame {
 		welcomePanel.setBorder(title);
 		welcomePanel.setBackground(Color.LIGHT_GRAY);
 		
-		JLabel welcome1 = new JLabel("The application offers a display of all potential attacks and the entry of a new attack.");
+		JLabel welcome1 = new JLabel("The application offers a display of all potential attacks and the possibility of input a new attack.");
 		welcome1.setFont(new Font("Verdana", Font.PLAIN, 20));
 		welcomePanel.add(welcome1);
 		
-		JLabel welcome2 = new JLabel("neki tekst - DOPISATI STA APLIKACIJA NUDI.");
+		JLabel welcome2 = new JLabel("Based on the symptoms you enter, you can see the likelihood that a particular attack has occurred.");
 		welcome2.setFont(new Font("Verdana", Font.PLAIN, 20));
 		GridBagConstraints grid = new GridBagConstraints();
 		grid.gridy = 1;
 		grid.insets = new Insets(10, 0, 0, 0);
 		welcomePanel.add(welcome2, grid);
+		
+		JLabel welcome3 = new JLabel("Also, depending on the characteristics of the attack that we list, we can find the most similar attack.");
+		welcome3.setFont(new Font("Verdana", Font.PLAIN, 20));
+		GridBagConstraints grid2 = new GridBagConstraints();
+		grid2.gridy = 2;
+		grid2.insets = new Insets(10, 0, 0, 0);
+		welcomePanel.add(welcome3, grid2);
+		
+		JLabel welcome4 = new JLabel("It is possible to suggest measures that the engineer should take.");
+		welcome4.setFont(new Font("Verdana", Font.PLAIN, 20));
+		GridBagConstraints grid3 = new GridBagConstraints();
+		grid3.gridy = 3;
+		grid3.insets = new Insets(10, 0, 0, 0);
+		welcomePanel.add(welcome4, grid3);
+		
+		JLabel welcome5 = new JLabel("Based on input threats, the system risk calculation option is enabled.");
+		welcome5.setFont(new Font("Verdana", Font.PLAIN, 20));
+		GridBagConstraints grid4 = new GridBagConstraints();
+		grid4.gridy = 4;
+		grid4.insets = new Insets(10, 0, 0, 0);
+		welcomePanel.add(welcome5, grid4);
+		
+		JLabel welcome6 = new JLabel("<html><br/>Let's stay protected :)<html>");
+		welcome6.setFont(new Font("Verdana", Font.PLAIN, 20));
+		GridBagConstraints grid5 = new GridBagConstraints();
+		grid5.gridy = 6;
+		grid5.insets = new Insets(10, 0, 0, 0);
+		welcomePanel.add(welcome6, grid5);
 		
 		JPanel zaDugmice = new JPanel();
 		zaDugmice.setBackground(new Color(240, 240, 245));
