@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 public class StatusBar extends JPanel {
 
 	public StatusBar() {
-		JLabel naslovLabela = new JLabel("Informaciona bezbednost");
+		JLabel naslovLabela = new JLabel("Information security");
 		add(naslovLabela);
 
 		JLabel vremeLabela = new JLabel();
