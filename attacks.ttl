@@ -121,3 +121,219 @@
 	foaf:domains_of_attacks "Software"^^xsd:string;
 	foaf:mitigations "To help protect an application from buffer manipulation attacks, a number of potential mitigations can be leveraged. Before starting the development of the application, consider using a code language (e.g. Java) or compiler that limits the ability of developers to act beyond the bounds of a buffer. If the chosen language is susceptible to buffer related issues (e.g. C) then consider using secure functions instead of those vulnerable to buffer manipulations. If a potentially dangerous function must be used - make sure that proper boundary checking is performed. Additionally there are often a number of compiler-based mechanisms (e.g. StackGuard and ProPolice and the Microsoft Visual Studio /GS flag) that can help identify and protect against potential buffer issues. Finally - there may be operating system level preventative functionality that can be applied."^^xsd:string;
 	foaf:weaknesses "Improper Restriction of Operations within the Bounds of a Memory Buffer"^^xsd:string.
+
+<#SharedResourceManipulation> a foaf:Attack;
+	foaf:name "Shared Resource Manipulation"^^xsd:string;
+	foaf:parent_of "None"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Improper Isolation of Shared Resources on System-on-a-Chip (SoC), Improper Isolation of Shared Resources in Network On Chip"^^xsd:string.
+
+<#PointerManipulation> a foaf:Attack;
+	foaf:name "Pointer Manipulation"^^xsd:string;
+	foaf:parent_of "None"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Incorrect Calculation, Untrusted Pointer Dereference, Use of Out-of-range Pointer Offset"^^xsd:string.
+
+<#InputDataManipulation> a foaf:Attack;
+	foaf:name "Input Data Manipulation"^^xsd:string;
+	foaf:parent_of "Path Traversal, Integer Attacks, Leverage Alternate Encoding"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Improper Input Validation"^^xsd:string.
+
+<#ContentSpoofing> a foaf:Attack;
+	foaf:name "Content Spoofing"^^xsd:string;
+	foaf:parent_of "Checksum Spoofing, Spoofing of UDDI/ebXML Messages, Intent Spoof, Counterfeit GPS Signals"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware, Communications"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#IdentitySpoofing> a foaf:Attack;
+	foaf:name "Identity Spoofing"^^xsd:string;
+	foaf:parent_of "Pharming, Phishing, Fake the Source of Data, Principal Spoof, Signature Spoof"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Communications, Social Engineering"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#ResourceLocationSpoofing> a foaf:Attack;
+	foaf:name "Resource Location Spoofing"^^xsd:string;
+	foaf:parent_of "Redirect Access to Libraries, Establish Rogue Location"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware, Communications, Social Engineering"^^xsd:string;
+	foaf:mitigations "Monitor network activity to detect any anomalous or unauthorized communication exchanges."^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#ActionSpoofing> a foaf:Attack;
+	foaf:name "Action Spoofing"^^xsd:string;
+	foaf:parent_of "Clickjacking, Android Activity Hijack, Task Impresonation, Tapjacking"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Social Engineering"^^xsd:string;
+	foaf:mitigations "Avoid interacting with suspicious sites or clicking suspicious links., An organization should provide regular robust cybersecurity training to its employees"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#ManipulateHumanBehavior> a foaf:Attack;
+	foaf:name "Manipulate Human Behavior"^^xsd:string;
+	foaf:parent_of "Pretexting, Influence Perception, Target Influence via Framing, Influence via Incentives, Influence via Psychological Principles"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Social Engineering"^^xsd:string;
+	foaf:mitigations "An organization should provide regular robust cybersecurity training to its employees to prevent successful social engineering attacks."^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#InfrastructureManipulation> a foaf:Attack;
+	foaf:name "Infrastructure Manipulation"^^xsd:string;
+	foaf:parent_of "Cache Poisoning, Force the System to Reset Values, Audit Log Manipulation, Contradictory Destinations in Traffic Routing Schemes, Block Logging to Central Repository"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware, Communications"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#FileManipulation> a foaf:Attack;
+	foaf:name "File Manipulation"^^xsd:string;
+	foaf:parent_of "User-Controlled Filename, Artificially Inflate File Sizes, Alternative Execution Due to Deceptive Filenames, Hiding Malicious Data or Code within Files"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#Configuration/Environment> a foaf:Attack;
+	foaf:name "Configuration/Environment"^^xsd:string;
+	foaf:parent_of "Manipulating Writeable Configuration Files, Manipulate Registry Information, Schema Poisoning, Data Injected During Configuration, Disable Security Software"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware, Supply Chain"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "External Control of System or Configuration Setting, Improper Hardware Lock Protection for Security Sensitive Controls or Hardware Internal or Debug Modes Allow Override of Locks"^^xsd:string.
+
+<#SoftwareIntegrityAttack> a foaf:Attack;
+	foaf:name "Software Integrity Attack"^^xsd:string;
+	foaf:parent_of "Malicious Software Download, Malicious Software Update"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Social Engineering"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Download of Code Without Integrity Check"^^xsd:string.
+
+<#ModificationDuringManufacture> a foaf:Attack;
+	foaf:name "Modification During Manufacture"^^xsd:string;
+	foaf:parent_of "Development Alteration, Design Alteration"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware, Supply Chain"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#ManipulationDuringDistribution> a foaf:Attack;
+	foaf:name "Manipulation During Distribution"^^xsd:string;
+	foaf:parent_of "Malicious Hardware Component Replacement, Malicious Software Implanted, Rogue Integration Procedures"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Hardware, Supply Chain"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Product Released in Non-Release Configuration"^^xsd:string.
+
+<#HardwareIntegrityAttack> a foaf:Attack;
+	foaf:name "Hardware Integrity Attack"^^xsd:string;
+	foaf:parent_of "Physically Hacking Hardware, Malicious Hardware Update"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Hardware, Supply Chain, Physical Security"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#MaliciousLogicInsertion> a foaf:Attack;
+	foaf:name "Malicious Logic Insertion"^^xsd:string;
+	foaf:parent_of "Infected Software, Infected Hardware, Infected Memory"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware, Supply Chain"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Improper Access Control"^^xsd:string.
+
+<#ContaminateResource> a foaf:Attack;
+	foaf:name "Contaminate Resource"^^xsd:string;
+	foaf:parent_of "None"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#Obstruction> a foaf:Attack;
+	foaf:name "Obstruction"^^xsd:string;
+	foaf:parent_of "Physical Destruction of Device or Component, Route Disabling, Jamming, Blockage"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Hardware, Communications, Social Engineering, Physical Security"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "None"^^xsd:string.
+
+<#ParameterInjection> a foaf:Attack;
+	foaf:name "Parameter Injection"^^xsd:string;
+	foaf:parent_of "Argument Injection, Command Delimiters, Email Injection, Format String Injection, Reflection Injection, Flash Injection"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Social Engineering"^^xsd:string;
+	foaf:mitigations "Implement an audit log written to a separate host. In the event of a compromise the audit log may be able to provide evidence and details of the compromise. Treat all user input as untrusted data that must be validated before use."^^xsd:string;
+	foaf:weaknesses "Improper Neutralization of Argument Delimiters in a Command (Argument Injection)"^^xsd:string.
+
+<#CodeInclusion> a foaf:Attack;
+	foaf:name "Code Inclusion"^^xsd:string;
+	foaf:parent_of "Local Code Inclusion, Remote Code Inclusion"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Inclusion of Functionality from Untrusted Control Sphere"^^xsd:string.
+
+<#ResourceInjection> a foaf:Attack;
+	foaf:name "Resource Injection"^^xsd:string;
+	foaf:parent_of "Cellular Data Injection"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Communications"^^xsd:string;
+	foaf:mitigations "Ensure all input content that is delivered to client is sanitized against an acceptable content specification. Perform input validation for all content. Enforce regular patching of software"^^xsd:string;
+	foaf:weaknesses "Improper Control of Resource Identifiers (Resource Injection)"^^xsd:string.
+
+<#CodeInjection> a foaf:Attack;
+	foaf:name "Code Injection"^^xsd:string;
+	foaf:parent_of "Embedding Scripts within Scripts, File Content Injection, Using Meta-characters in E-mail Headers to Inject Malicious Payloads, Cross-Site Scripting (XSS), Generic Cross-Browser Cross-Domain Theft"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "Utilize strict type and character and encoding enforcement, Ensure all input content that is delivered to client is sanitized against an acceptable content specification., Perform input validation for all content., Enforce regular patching of software."^^xsd:string;
+	foaf:weaknesses "Improper Control of Generation of Code (Code Injection)"^^xsd:string.
+
+<#CommandInjection> a foaf:Attack;
+	foaf:name "Command Injection"^^xsd:string;
+	foaf:parent_of "Manipulating Writeable Terminal Devices, SQL Injection, OS Command Injection, LDAP Injection, IMAP/SMTP Command Injection, XML Injection"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "All user-controllable input should be validated and filtered for potentially unwanted characters. Using an allowlist for input is desired but if use of a denylist approach is necessary then focusing on command related terms and delimiters is necessary., Input should be encoded prior to use in commands to make sure command related characters are not treated as part of the command. For example quotation characters may need to be encoded so that the application does not treat the quotation as a delimiter., Input should be parameterized or restricted to data sections of a command thus removing the chance that the input will be treated as part of the command itself."^^xsd:string;
+	foaf:weaknesses "Improper Neutralization of Special Elements used in a Command (Command Injection)"^^xsd:string.
+
+<#LocalExecutionofCode> a foaf:Attack;
+	foaf:name "Local Execution of Code"^^xsd:string;
+	foaf:parent_of "Targeted Malware"^^xsd:string;
+	foaf:can_follow "Windows Admin Shares with Stolen Credentials, Use of Captured Hashes (Pass The Hash)"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "Employ robust cybersecurity training for all employees., Implement system antivirus software that scans all attachments before opening them., Regularly patch all software., Execute all suspicious files in a sandbox environment."^^xsd:string;
+	foaf:weaknesses "Inclusion of Functionality from Untrusted Control Sphere"^^xsd:string.
+
+<#ObjectInjection> a foaf:Attack;
+	foaf:name "Object Injection"^^xsd:string;
+	foaf:parent_of "None"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software"^^xsd:string;
+	foaf:mitigations "Implementation: Validate object before deserialization process, Design: Limit which types can be deserialized., Implementation: Avoid having unnecessary types or gadgets available that can be leveraged for malicious ends. Use an allowlist of acceptable classes., Implementation: Keep session state on the server when possible."^^xsd:string;
+	foaf:weaknesses "Deserialization of Untrusted Data"^^xsd:string.
+
+<#TrafficInjection> a foaf:Attack;
+	foaf:name "TrafficInjection"^^xsd:string;
+	foaf:parent_of "Connection Reset"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Software, Communications"^^xsd:string;
+	foaf:mitigations "None"^^xsd:string;
+	foaf:weaknesses "Improper Verification of Source of a Communication Channel"^^xsd:string.
+
+<#HardwareFaultInjection> a foaf:Attack;
+	foaf:name "Hardware Fault Injection"^^xsd:string;
+	foaf:parent_of "Mobile Device Fault Injection"^^xsd:string;
+	foaf:can_follow "None"^^xsd:string;
+	foaf:domains_of_attacks "Hardware, Communications"^^xsd:string;
+	foaf:mitigations "Implement robust physical security countermeasures and monitoring."^^xsd:string;
+	foaf:weaknesses "Missing or Improperly Implemented Protection Against Voltage and Clock Glitches, Semiconductor Defects in Hardware Logic with Security-Sensitive Implications, Hardware Features Enable Physical Attacks from Software, Improper Protection against Electromagnetic Fault Injection (EM-FI), Insufficient Protection Against Instruction Skipping Via Fault Injection, Unauthorized Error Injection Can Degrade Hardware Redundancy"^^xsd:string.
