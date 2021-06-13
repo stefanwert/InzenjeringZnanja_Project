@@ -23,23 +23,82 @@ public class Test {
 		Model model = ModelFactory.createDefaultModel();
 		
 		try {
-			InputStream is = new FileInputStream("attacks.ttl");
+			InputStream is = new FileInputStream("src\\attacks.ttl");
 			RDFDataMgr.read(model, is, Lang.TURTLE);
 			is.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		String queryString = "";	//dodati
-		Query query = QueryFactory.create(queryString) ;
-		QueryExecution qexec = QueryExecutionFactory.create(query, model);
-		ResultSet results = qexec.execSelect() ;
-		while (results.hasNext()) {
-			QuerySolution solution = results.nextSolution() ;
-			Resource resource = solution.getResource("");	//dodati
-			Literal literal = solution.getLiteral("");	//dodati
-			System.out.println(resource.getURI());
-			System.out.println(literal.getString());
+		//PRVI UPIT
+		System.out.println("*****Svi napadi sortirani po abecednom redu:*****");
+		System.out.println();
+		String queryString1 = "" + "PREFIX foaf: <https://github.com/stefanwert/InzenjeringZnanja_Project#>"
+								+ "SELECT ?nazivNapada "
+								+ "WHERE {"
+								+ "    ?napad a foaf:Attack ;"
+								+ "        foaf:name ?nazivNapada ."
+								+ "} "
+								+ "ORDER BY asc(?napad)";	
+		Query query1 = QueryFactory.create(queryString1) ;
+		QueryExecution qexec1 = QueryExecutionFactory.create(query1, model);
+		ResultSet results1 = qexec1.execSelect() ;
+		while (results1.hasNext()) {
+			QuerySolution solution = results1.nextSolution() ;
+			Literal nazivNapadaLiteral = solution.getLiteral("nazivNapada");
+			System.out.println(nazivNapadaLiteral.getString());
 		}
+		
+		//DRUGI UPIT
+		System.out.println();
+		System.out.println("*****Svi napadi koji pocinju na slovo M i, izmedju ostalog, napadaju i hardver, sortirani po duzini karaktera u nazivu:*****");
+		System.out.println();
+		String queryString2 = "" + "PREFIX foaf: <https://github.com/stefanwert/InzenjeringZnanja_Project#> "
+								+ "SELECT ?nazivNapada ?domenNapada "
+								+ "WHERE {"
+								+ "    ?napad a foaf:Attack ;"
+								+ "        foaf:domains_of_attacks ?domenNapada ;"
+								+ "        foaf:name ?nazivNapada ."
+								+ "FILTER strstarts(str(?nazivNapada), \"M\")"
+								+ "FILTER contains(str(?domenNapada),\"Hardware\")"
+								+ "} "
+								+ "ORDER BY strlen(str(?napad))";	
+		Query query2 = QueryFactory.create(queryString2) ;
+		QueryExecution qexec2 = QueryExecutionFactory.create(query2, model);
+		ResultSet results2 = qexec2.execSelect() ;
+		while (results2.hasNext()) {
+			QuerySolution solution = results2.nextSolution() ;
+			Literal nazivNapadaLiteral = solution.getLiteral("nazivNapada");
+			Literal domenNapadaLiteral = solution.getLiteral("domenNapada");
+			System.out.println(nazivNapadaLiteral.getString());
+			System.out.println(domenNapadaLiteral.getString());
+			System.out.println();
+		}
+		
+		//TRECI UPIT
+		/*System.out.println("*****Svi napadi koji se sastoje iz 3 reci (podrazumeva se da su reci odvojene tacno jednim razmakom):*****");
+		System.out.println();
+		String queryString3 = "" + "PREFIX foaf: <https://github.com/stefanwert/InzenjeringZnanja_Project#> "
+								+ "SELECT ?nazivNapada ?domenNapada (count(regex( ?nazivNapada ,\" \")) as ?brojReci)"
+								+ "WHERE {"
+								+ "    ?napad a foaf:Attack ;"
+								+ "        foaf:domains_of_attacks ?domenNapada ;"
+								+ "        foaf:name ?nazivNapada ."
+								+ "}"
+								+ "GROUP BY ?nazivNapada ?domenNapada";	
+		Query query3 = QueryFactory.create(queryString3) ;
+		QueryExecution qexec3 = QueryExecutionFactory.create(query3, model);
+		ResultSet results3 = qexec3.execSelect() ;
+		while (results3.hasNext()) {
+			QuerySolution solution = results3.nextSolution() ;
+			Literal nazivNapadaLiteral = solution.getLiteral("nazivNapada");
+			Literal domenNapadaLiteral = solution.getLiteral("domenNapada");
+			Literal brojReciLiteral = solution.getLiteral("brojReci");
+			System.out.println(nazivNapadaLiteral.getString());
+			System.out.println(domenNapadaLiteral.getString());
+			System.out.println(brojReciLiteral.getInt());
+			System.out.println();
+		}
+		System.out.println("AAAA");*/
 	}
 }
