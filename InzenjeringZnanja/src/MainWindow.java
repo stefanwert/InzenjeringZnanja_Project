@@ -95,6 +95,7 @@ public class MainWindow extends JFrame {
 		zaDugmice.setBackground(new Color(240, 240, 245));
 		JButton izlistavanjeNapada = new JButton("Show all attacks");
 		JButton dodavanjeNapada = new JButton("Add new attack");
+		JButton azuriranjeNapada = new JButton("Update attack");
 		
 		izlistavanjeNapada.addActionListener(new ActionListener() {
 			
@@ -116,8 +117,20 @@ public class MainWindow extends JFrame {
 			}
 		});
 		
+		azuriranjeNapada.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				UpdateAttack dialogUpdateAttack = new UpdateAttack();
+				dialogUpdateAttack.setVisible(true);
+				
+			}
+		});
+		
 		zaDugmice.add(izlistavanjeNapada);
 		zaDugmice.add(dodavanjeNapada);
+		zaDugmice.add(azuriranjeNapada);
 		this.add(zaDugmice, BorderLayout.NORTH);
 		
 		this.add(welcomePanel, BorderLayout.CENTER);

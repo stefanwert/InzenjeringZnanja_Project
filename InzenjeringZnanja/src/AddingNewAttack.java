@@ -117,7 +117,7 @@ public class AddingNewAttack extends JDialog {
 		});
 
 		ReadingCSVFile readingCSVFile = new ReadingCSVFile();
-		File attacks = new File("src\\\\attacks.csv");
+		File attacks = new File("src\\attacks.csv");
 		ArrayList<String[]> procitano = readingCSVFile.ReadCSVfile(attacks);
 		
 		applyButton.addActionListener(new ActionListener() {

@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ReadingCSVFile {
 
@@ -18,7 +17,6 @@ public class ReadingCSVFile {
                 String jedanRedIzFajla = brd.readLine();
                 jedanRedIzFajlaSplitovano = jedanRedIzFajla.split(";");
                 procitano.add(jedanRedIzFajlaSplitovano);
-                System.out.println(Arrays.toString(jedanRedIzFajlaSplitovano));
             } 
             brd.close();
         } 
