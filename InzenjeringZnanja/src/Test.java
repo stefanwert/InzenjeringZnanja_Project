@@ -14,6 +14,11 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 
+import cbr.primer1.CbrApplication;
+import model.Attack;
+import ucm.gaia.jcolibri.cbraplications.StandardCBRApplication;
+import ucm.gaia.jcolibri.cbrcore.CBRQuery;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -74,6 +79,41 @@ public class Test {
 			System.out.println(domenNapadaLiteral.getString());
 			System.out.println();
 		}
+		
+		/*StandardCBRApplication recommender = new CbrApplication();
+		try {
+			recommender.configure();
+
+			recommender.preCycle();
+
+			CBRQuery query = new CBRQuery();*/
+			
+			/*TransactionDescription txDescription = new TransactionDescription();
+			RealEstateDescription reDescription = new RealEstateDescription();
+			reDescription.setAge(25);
+			reDescription.setDistanceToPublicTransportation(300);
+			reDescription.setLocalStores(5);
+			txDescription.setRealEstateDescription(reDescription);
+			txDescription.setYear(2013);
+			
+			query.setDescription( txDescription );*/
+
+			/*Attack attack = new Attack();
+			attack.setName("proba");
+			attack.setParentOf("HTTP DoS ");
+			attack.setCanFallow("Use of Captured Hashes (Pass The Hash)");
+			attack.setDomainsOfAttack("Hardware,, Software");
+			attack.setMitigations("Use safe libraries to access resources such as files");
+			attack.setWeakness("None");
+
+			query.setDescription(attack);
+
+			recommender.cycle(query);
+
+			recommender.postCycle();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
 		
 		//TRECI UPIT
 		/*System.out.println("*****Svi napadi koji se sastoje iz 3 reci (podrazumeva se da su reci odvojene tacno jednim razmakom):*****");

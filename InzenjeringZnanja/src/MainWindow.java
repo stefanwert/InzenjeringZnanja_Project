@@ -9,6 +9,7 @@ import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -17,6 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+
+import cbr.primer1.T2Data;
 
 public class MainWindow extends JFrame {
 
@@ -96,6 +99,7 @@ public class MainWindow extends JFrame {
 		JButton izlistavanjeNapada = new JButton("Show all attacks");
 		JButton dodavanjeNapada = new JButton("Add new attack");
 		JButton azuriranjeNapada = new JButton("Update attack");
+		JButton slicanNapad = new JButton("Find similar attack");
 		
 		izlistavanjeNapada.addActionListener(new ActionListener() {
 			
@@ -104,6 +108,17 @@ public class MainWindow extends JFrame {
 				// TODO Auto-generated method stub
 				tableOfAttacks();
 			}
+		});
+		
+		slicanNapad.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				FindSimilarAttacks findSimilarAttacks = new FindSimilarAttacks();
+				findSimilarAttacks.setVisible(true);
+				
+			}
+			
 		});
 		
 		dodavanjeNapada.addActionListener(new ActionListener() {
@@ -131,6 +146,7 @@ public class MainWindow extends JFrame {
 		zaDugmice.add(izlistavanjeNapada);
 		zaDugmice.add(dodavanjeNapada);
 		zaDugmice.add(azuriranjeNapada);
+		zaDugmice.add(slicanNapad);
 		this.add(zaDugmice, BorderLayout.NORTH);
 		
 		this.add(welcomePanel, BorderLayout.CENTER);
@@ -152,5 +168,16 @@ public class MainWindow extends JFrame {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+	
+	private static void tableOfSimilarAttacks(ArrayList<String[]> procitano) {
+		JFrame frame = new JFrame("Table of similar attacks");
+        // Create and set up the content pane.
+        T2Data newContentPane = new T2Data(procitano);
+        frame.setContentPane(newContentPane);
+        // Display the window.
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+	}
 	
 }
