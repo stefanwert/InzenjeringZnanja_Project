@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+import net.sourceforge.jFuzzyLogic.JFuzzyLogic;
 
 public class MainWindow extends JFrame {
 
@@ -30,6 +31,10 @@ public class MainWindow extends JFrame {
 	}
 	
 	public MainWindow() {
+//		String[] strings = {"-e","src//RiskOfVulnerability.fcl.txt","1","2","3","4","5","6","7","8","9"};
+// 		JFuzzyLogic f2 = new JFuzzyLogic(strings);
+// 		f2.run();
+
 		Toolkit t = Toolkit.getDefaultToolkit();
 		Dimension dimenzije = t.getScreenSize();
 		setSize(dimenzije.width * 5 / 6, dimenzije.height * 5 / 6);
@@ -96,7 +101,17 @@ public class MainWindow extends JFrame {
 		JButton izlistavanjeNapada = new JButton("Show all attacks");
 		JButton dodavanjeNapada = new JButton("Add new attack");
 		JButton azuriranjeNapada = new JButton("Update attack");
+		JButton procenaRizika = new JButton("Evaluate risk");
 		
+		procenaRizika.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				RiskEvaluation riskEvalation = new RiskEvaluation();
+				riskEvalation.setVisible(true);
+			}
+		});
 		izlistavanjeNapada.addActionListener(new ActionListener() {
 			
 			@Override
@@ -131,6 +146,7 @@ public class MainWindow extends JFrame {
 		zaDugmice.add(izlistavanjeNapada);
 		zaDugmice.add(dodavanjeNapada);
 		zaDugmice.add(azuriranjeNapada);
+		zaDugmice.add(procenaRizika);		
 		this.add(zaDugmice, BorderLayout.NORTH);
 		
 		this.add(welcomePanel, BorderLayout.CENTER);
