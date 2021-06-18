@@ -20,6 +20,7 @@
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-core-2.9.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-databind-2.9.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jcl-over-slf4j-1.7.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jCOLIBRI-3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-arq-3.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-base-3.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-cmds-3.11.0.jar"/>
@@ -33,11 +34,12 @@
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-shaded-guava-3.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-tdb2-3.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-tdb-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jFuzzyLogic.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jsonld-java-0.12.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/libthrift-0.12.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/log4j-api-2.11.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/slf4j-api-1.7.26.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/slf4j-log4j12-1.7.26.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzenjeringZnanja/ostalo/jFuzzyLogic.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
