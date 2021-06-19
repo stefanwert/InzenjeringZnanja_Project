@@ -259,9 +259,20 @@ public class RiskEvaluation  extends JDialog{
 				
 				
 				// TODO Auto-generated method stub
-				String[] strings = {"-e","src//RiskOfVulnerability.fcl.txt",Double.toString(arg[0]),Double.toString(arg[1]),Double.toString(arg[2]),Double.toString(arg[3]),Double.toString(arg[4]),Double.toString(arg[5]),Double.toString(arg[6]),Double.toString(arg[7]),Double.toString(arg[8])};
+				String[] strings = {"-e","src//RiskOfVulnerability.fcl.txt"
+						,Double.toString(arg[1]),//dobro je
+						Double.toString(arg[0]),//dobro je
+						Double.toString(arg[7]),//dobro je
+						Double.toString(arg[4])	//dobro je
+						,Double.toString(arg[6])//
+						,Double.toString(arg[2])//dobro je
+						,Double.toString(arg[3])//dobro je
+						,Double.toString(arg[8])//dobro je 
+						,Double.toString(arg[5])};//dobro je
 		 		JFuzzyLogic f2 = new JFuzzyLogic(strings);
 		 		f2.run();
+		 		setVisible(false); //you can't see me!
+		 		dispose(); //Destroy the JFrame object
 			}
 		});
 		this.add(panel);
