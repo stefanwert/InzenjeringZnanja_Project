@@ -1,4 +1,4 @@
-package connector.primer1;
+package connector;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

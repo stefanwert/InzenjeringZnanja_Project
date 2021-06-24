@@ -99,6 +99,7 @@ public class BayesianNetworkProbabilityCalculatorDialog extends JDialog {
 		threatCB.setPreferredSize(new Dimension(200, 50));
 
 		resultTA = new JTextArea(16, 50);
+		resultTA.setLineWrap(true);
 		resultTA.setText("Results will appear here...");
 		resultTA.setEditable(false);
 		resultTA.setFont(new Font("Arial", 2, 12));
@@ -248,13 +249,13 @@ public class BayesianNetworkProbabilityCalculatorDialog extends JDialog {
 				}
 				
 				resultTA.setText("");
-				resultTA.append("------------------------------------------------------------------------------------------------------------------------\n");
+				resultTA.append("----------------------------------------------------------------------------------------------------------------------------\n");
 				int counter = 0;
 				Iterator<Entry<String, Float>> iterator = sortedResults.entrySet().iterator();
 				while (iterator.hasNext() && counter < 5) {
 					Map.Entry<String, Float> pair = (Map.Entry<String, Float>)iterator.next();
 					resultTA.append("Attack name: " + pair.getKey().replace("_", " ") + "\n" + "Probability: " + pair.getValue()*100 + "%" + "\n");
-					resultTA.append("------------------------------------------------------------------------------------------------------------------------\n");
+					resultTA.append("----------------------------------------------------------------------------------------------------------------------------\n");
 					iterator.remove();
 					counter++;
 				}

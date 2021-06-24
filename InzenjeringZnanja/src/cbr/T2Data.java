@@ -1,4 +1,4 @@
-package cbr.primer1;
+package cbr;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

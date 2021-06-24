@@ -1,4 +1,4 @@
-package cbr.primer1;
+package cbr;
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;

@@ -18,7 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
-import cbr.primer1.T2Data;
+
+import cbr.T2Data;
 
 public class MainWindow extends JFrame {
 
@@ -103,6 +104,7 @@ public class MainWindow extends JFrame {
 		JButton procenaRizika = new JButton("Evaluate risk");
 		JButton slicanNapad = new JButton("Find similar attack");
 		JButton verovatnocaNapada = new JButton("Calculate probability");
+		JButton sugerisanjeMera = new JButton("Mitigations suggestion");
 		
 		procenaRizika.addActionListener(new ActionListener() {
 			
@@ -165,12 +167,23 @@ public class MainWindow extends JFrame {
 			}
 		});
 		
+		sugerisanjeMera.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				MitigationsDialog mitigationsDialog = new MitigationsDialog();
+				mitigationsDialog.setVisible(true);
+			}
+		});
+		
 		zaDugmice.add(izlistavanjeNapada);
 		zaDugmice.add(dodavanjeNapada);
 		zaDugmice.add(azuriranjeNapada);
 		zaDugmice.add(procenaRizika);	
 		zaDugmice.add(slicanNapad);
 		zaDugmice.add(verovatnocaNapada);
+		zaDugmice.add(sugerisanjeMera);
 		this.add(zaDugmice, BorderLayout.NORTH);
 		
 		this.add(welcomePanel, BorderLayout.CENTER);

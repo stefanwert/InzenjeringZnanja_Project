@@ -1,12 +1,10 @@
-package cbr.primer1;
+package cbr;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
 import javax.swing.JFrame;
 
-import connector.primer1.CsvConnector;
+import connector.CsvConnector;
 import model.Attack;
 import ucm.gaia.jcolibri.casebase.LinealCaseBase;
 import ucm.gaia.jcolibri.cbraplications.StandardCBRApplication;
@@ -21,8 +19,6 @@ import ucm.gaia.jcolibri.method.retrieve.RetrievalResult;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.NNConfig;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
-import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.Interval;
-import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.Threshold;
 import ucm.gaia.jcolibri.method.retrieve.selection.SelectCases;
 
 public class CbrApplication implements StandardCBRApplication {
@@ -105,8 +101,38 @@ public class CbrApplication implements StandardCBRApplication {
 			}
 			
 		}
+		JFrame frame = new JFrame("Table of similar attacks");
+        // Create and set up the content pane.
+        T2Data newContentPane = new T2Data(procitano);
+        frame.setContentPane(newContentPane);
+        // Display the window.
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
 		
 	}
+	
+	public void parseCycle(CBRQuery query) {
+		Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
+		eval = SelectCases.selectTopKRR(eval, 5);
+		
+		ArrayList<String[]> procitano = new ArrayList<>();
+		String[] jedanRedSplitovano;
+		
+		
+		for (RetrievalResult nse : eval) {
+			String[] split1 = nse.get_case().getDescription().toString().split("{");
+			String[] split2 = split1[1].split("=");
+			
+			//name
+			String[] splitName = split2[1].split(",");
+			String splitName1 = splitName[0].substring(1,(splitName[0].length()-1));
+			System.out.println(splitName1);
+			nse.get_case().getDescription();
+			nse.getEval();
+		}
+	}
+	
 
 	public void postCycle() throws ExecutionException {
 		
@@ -120,41 +146,6 @@ public class CbrApplication implements StandardCBRApplication {
 		return _caseBase;
 	}
 
-	public static void main(String[] args) {
-		StandardCBRApplication recommender = new CbrApplication();
-		try {
-			recommender.configure();
 
-			recommender.preCycle();
-
-			CBRQuery query = new CBRQuery();
-			
-			/*TransactionDescription txDescription = new TransactionDescription();
-			RealEstateDescription reDescription = new RealEstateDescription();
-			reDescription.setAge(25);
-			reDescription.setDistanceToPublicTransportation(300);
-			reDescription.setLocalStores(5);
-			txDescription.setRealEstateDescription(reDescription);
-			txDescription.setYear(2013);
-			
-			query.setDescription( txDescription );*/
-
-			Attack attack = new Attack();
-			attack.setName("proba");
-			attack.setParentOf("HTTP DoS ");
-			attack.setCanFallow("Use of Captured Hashes (Pass The Hash)");
-			attack.setDomainsOfAttack("Hardware,, Software");
-			attack.setMitigations("Use safe libraries to access resources such as files");
-			attack.setWeakness("None");
-
-			query.setDescription(attack);
-
-			recommender.cycle(query);
-
-			recommender.postCycle();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 }
