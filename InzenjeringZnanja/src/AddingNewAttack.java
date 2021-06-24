@@ -21,6 +21,8 @@ import javax.swing.JTextField;
 
 public class AddingNewAttack extends JDialog {
 
+	private static final long serialVersionUID = 8571437361256217385L;
+	
 	private JLabel warning;
 	private JLabel nameLabel;
 	private JTextField nameTF;
@@ -75,12 +77,12 @@ public class AddingNewAttack extends JDialog {
 		weaknessTA = new JTextArea(4, 20);
 		weaknessTA.setLineWrap(true);
 		
-		JRadioButton softwareRB = new JRadioButton("Software");
-		JRadioButton hardwareRB = new JRadioButton("Hardware");
-		JRadioButton communicationsRB = new JRadioButton("Communications");
-		JRadioButton socialEngineeringRB = new JRadioButton("Social Engineering");
-		JRadioButton supplyChainRB = new JRadioButton("Supply chain");
-		JRadioButton physicalSecurityRB = new JRadioButton("Physical security");
+		final JRadioButton softwareRB = new JRadioButton("Software");
+		final JRadioButton hardwareRB = new JRadioButton("Hardware");
+		final JRadioButton communicationsRB = new JRadioButton("Communications");
+		final JRadioButton socialEngineeringRB = new JRadioButton("Social Engineering");
+		final JRadioButton supplyChainRB = new JRadioButton("Supply chain");
+		final JRadioButton physicalSecurityRB = new JRadioButton("Physical security");
 		
 		addingAttackPanel.add(warning);
 		addingAttackPanel.add(nameLabel);
@@ -118,7 +120,7 @@ public class AddingNewAttack extends JDialog {
 
 		ReadingCSVFile readingCSVFile = new ReadingCSVFile();
 		File attacks = new File("src\\attacks.csv");
-		ArrayList<String[]> procitano = readingCSVFile.ReadCSVfile(attacks);
+		final ArrayList<String[]> procitano = readingCSVFile.ReadCSVfile(attacks);
 		
 		applyButton.addActionListener(new ActionListener() {
 			

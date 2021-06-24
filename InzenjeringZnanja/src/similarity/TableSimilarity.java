@@ -1,6 +1,5 @@
 package similarity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import ucm.gaia.jcolibri.exception.NoApplicableSimilarityFunctionException;

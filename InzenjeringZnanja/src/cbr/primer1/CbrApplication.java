@@ -2,8 +2,6 @@ package cbr.primer1;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
 import javax.swing.JFrame;
 import connector.primer1.CsvConnector;
 import model.Attack;
@@ -20,8 +18,6 @@ import ucm.gaia.jcolibri.method.retrieve.RetrievalResult;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.NNConfig;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.global.Average;
-import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.Interval;
-import ucm.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.Threshold;
 import ucm.gaia.jcolibri.method.retrieve.selection.SelectCases;
 
 public class CbrApplication implements StandardCBRApplication {

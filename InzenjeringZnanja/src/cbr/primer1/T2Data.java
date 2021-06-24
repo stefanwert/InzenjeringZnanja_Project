@@ -1,8 +1,8 @@
 package cbr.primer1;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -11,7 +11,10 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
 public class T2Data extends JPanel {
-    private final JTable table;
+
+	private static final long serialVersionUID = 6214255083397716713L;
+	
+	private final JTable table;
 
     public T2Data(ArrayList<String[]> procitano) {
         super(new BorderLayout(3, 3));

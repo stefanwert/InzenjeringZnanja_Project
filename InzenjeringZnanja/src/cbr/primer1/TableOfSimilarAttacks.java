@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 public class TableOfSimilarAttacks extends AbstractTableModel {
-    private final String[] columnNames = { "attack name", "parent of", "can follow", "domains of attack", "mitigations", "weaknesses", "similarity"};
+
+	private static final long serialVersionUID = 2748661296873179088L;
+	
+	private final String[] columnNames = { "attack name", "parent of", "can follow", "domains of attack", "mitigations", "weaknesses", "similarity"};
     private ArrayList<String[]> datas = new ArrayList<String[]>();
 
     public void AddCSVData(ArrayList<String[]> dataIn) {

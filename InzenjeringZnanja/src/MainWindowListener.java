@@ -18,8 +18,8 @@ public class MainWindowListener implements WindowListener {
 		// TODO Auto-generated method stub
 		JFrame jFrame = (JFrame) e.getComponent();
 
-		int izabranoDugme = JOptionPane.showConfirmDialog(jFrame, "Da li ste sigurni da želite da zatvorite aplikaciju?",
-				"Zatvaranje aplikacije", JOptionPane.YES_NO_CANCEL_OPTION);
+		int izabranoDugme = JOptionPane.showConfirmDialog(jFrame, "Do you want to exit the application?",
+				"Close application", JOptionPane.YES_NO_CANCEL_OPTION);
 		if (izabranoDugme != JOptionPane.YES_OPTION) {
 			jFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		} else {

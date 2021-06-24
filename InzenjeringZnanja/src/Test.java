@@ -10,14 +10,8 @@ import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
-
-import cbr.primer1.CbrApplication;
-import model.Attack;
-import ucm.gaia.jcolibri.cbraplications.StandardCBRApplication;
-import ucm.gaia.jcolibri.cbrcore.CBRQuery;
 
 public class Test {
 

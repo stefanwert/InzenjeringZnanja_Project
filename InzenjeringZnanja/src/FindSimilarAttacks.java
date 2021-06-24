@@ -4,12 +4,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -26,6 +20,8 @@ import ucm.gaia.jcolibri.cbrcore.CBRQuery;
 
 public class FindSimilarAttacks extends JDialog {
 
+	private static final long serialVersionUID = -4386083219467196376L;
+	
 	private JLabel warning;
 	private JLabel nameLabel;
 	private JTextField nameTF;
@@ -80,12 +76,12 @@ public class FindSimilarAttacks extends JDialog {
 		weaknessTA = new JTextArea(4, 20);
 		weaknessTA.setLineWrap(true);
 		
-		JRadioButton softwareRB = new JRadioButton("Software");
-		JRadioButton hardwareRB = new JRadioButton("Hardware");
-		JRadioButton communicationsRB = new JRadioButton("Communications");
-		JRadioButton socialEngineeringRB = new JRadioButton("Social Engineering");
-		JRadioButton supplyChainRB = new JRadioButton("Supply chain");
-		JRadioButton physicalSecurityRB = new JRadioButton("Physical security");
+		final JRadioButton softwareRB = new JRadioButton("Software");
+		final JRadioButton hardwareRB = new JRadioButton("Hardware");
+		final JRadioButton communicationsRB = new JRadioButton("Communications");
+		final JRadioButton socialEngineeringRB = new JRadioButton("Social Engineering");
+		final JRadioButton supplyChainRB = new JRadioButton("Supply chain");
+		final JRadioButton physicalSecurityRB = new JRadioButton("Physical security");
 		
 		addingAttackPanel.add(warning);
 		addingAttackPanel.add(nameLabel);

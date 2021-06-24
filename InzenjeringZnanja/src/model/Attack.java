@@ -3,8 +3,6 @@ package model;
 import ucm.gaia.jcolibri.cbrcore.Attribute;
 import ucm.gaia.jcolibri.cbrcore.CaseComponent;
 
-import java.util.List;
-
 public class Attack implements CaseComponent {
 
     private String name;

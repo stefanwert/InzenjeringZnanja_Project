@@ -1,26 +1,21 @@
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.border.Border;
-
 import net.sourceforge.jFuzzyLogic.JFuzzyLogic;
 
 public class RiskEvaluation  extends JDialog{
+
+	private static final long serialVersionUID = 7446218372803787216L;
+	
 	private ButtonGroup access_vector = new ButtonGroup();
 	private ButtonGroup access_complexity = new ButtonGroup();
 	private ButtonGroup confidentiality_impact = new ButtonGroup();

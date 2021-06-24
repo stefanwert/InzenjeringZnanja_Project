@@ -24,6 +24,8 @@ import javax.swing.JTextField;
 
 public class UpdateAttack extends JDialog {
 
+	private static final long serialVersionUID = 4980753439575514620L;
+	
 	private JButton updateButton;
 	private JButton cancelButton;
 	private JButton automaticFill;
@@ -89,12 +91,12 @@ public class UpdateAttack extends JDialog {
 		weaknessTA = new JTextArea(9, 30);
 		weaknessTA.setLineWrap(true);
 	
-		JRadioButton softwareRB = new JRadioButton("Software");
-		JRadioButton hardwareRB = new JRadioButton("Hardware");
-		JRadioButton communicationsRB = new JRadioButton("Communications");
-		JRadioButton socialEngineeringRB = new JRadioButton("Social Engineering");
-		JRadioButton supplyChainRB = new JRadioButton("Supply chain");
-		JRadioButton physicalSecurityRB = new JRadioButton("Physical security");
+		final JRadioButton softwareRB = new JRadioButton("Software");
+		final JRadioButton hardwareRB = new JRadioButton("Hardware");
+		final JRadioButton communicationsRB = new JRadioButton("Communications");
+		final JRadioButton socialEngineeringRB = new JRadioButton("Social Engineering");
+		final JRadioButton supplyChainRB = new JRadioButton("Supply chain");
+		final JRadioButton physicalSecurityRB = new JRadioButton("Physical security");
 
 		nameLabel.setPreferredSize(new Dimension(110, 20));
 		parentOfLabel.setPreferredSize(new Dimension(110, 20));

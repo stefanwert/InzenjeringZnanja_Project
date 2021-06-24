@@ -3,7 +3,10 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 public class TableOfAttacks extends AbstractTableModel {
-    private final String[] columnNames = { "attack name", "parent of", "can follow", "domains of attack", "mitigations", "weaknesses"};
+
+	private static final long serialVersionUID = 8098032356732224415L;
+	
+	private final String[] columnNames = { "attack name", "parent of", "can follow", "domains of attack", "mitigations", "weaknesses"};
     private ArrayList<String[]> datas = new ArrayList<String[]>();
 
     public void AddCSVData(ArrayList<String[]> dataIn) {

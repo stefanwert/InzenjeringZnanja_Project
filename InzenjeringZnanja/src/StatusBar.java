@@ -1,4 +1,3 @@
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -7,12 +6,14 @@ import javax.swing.JPanel;
 
 public class StatusBar extends JPanel {
 
+	private static final long serialVersionUID = 4942410523704853090L;
+
 	public StatusBar() {
 		JLabel naslovLabela = new JLabel("Information security");
 		add(naslovLabela);
 
-		JLabel vremeLabela = new JLabel();
-		JLabel datumLabela = new JLabel();
+		final JLabel vremeLabela = new JLabel();
+		final JLabel datumLabela = new JLabel();
 		
 		add(vremeLabela);
 		add(datumLabela);

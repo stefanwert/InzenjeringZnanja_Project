@@ -1,45 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/collection-0.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-cli-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-codec-1.11.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-compress-1.18.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-csv-1.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-io-2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-lang3-3.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/httpclient-4.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/httpclient-cache-4.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/httpcore-4.4.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-annotations-2.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-core-2.9.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-databind-2.9.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jcl-over-slf4j-1.7.26.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jCOLIBRI-3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-arq-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-base-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-cmds-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-core-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-base-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-index-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-transaction-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-trans-data-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-iri-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-rdfconnection-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-shaded-guava-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-tdb2-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-tdb-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jFuzzyLogic.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jsonld-java-0.12.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/libthrift-0.12.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/log4j-api-2.11.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/slf4j-api-1.7.26.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Stefan/Desktop/InzProject/InzenjeringZnanja_Project/InzenjeringZnanja/lib/slf4j-log4j12-1.7.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/collection-0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-cli-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-compress-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-csv-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/httpclient-cache-4.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/httpcore-4.4.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-core-2.9.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jackson-databind-2.9.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/javahelp-2.0.02.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jaxme2-0.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jaxme2-rt-0.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jaxmeapi-0.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jaxmejs-0.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jaxmexs-0.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jcl-over-slf4j-1.7.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jCOLIBRI-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-arq-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-base-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-cmds-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-core-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-base-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-index-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-transaction-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-dboe-trans-data-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-iri-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-rdfconnection-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-shaded-guava-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-tdb2-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jena-tdb-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jFuzzyLogic.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jiprolog-4.1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jpf-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/jsonld-java-0.12.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/libthrift-0.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/log4j-api-2.11.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/slf4j-log4j12-1.7.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/unbbayes-4.22.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/xalan-2.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Gox/Desktop/IZ/ProjectIZ/InzenjeringZnanja_Project/InzenjeringZnanja/lib/xml-apis-1.0.b2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

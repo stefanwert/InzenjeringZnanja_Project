@@ -10,7 +10,10 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
 public class T1Data extends JPanel {
-    private final JTable table;
+
+	private static final long serialVersionUID = 324107024376215756L;
+	
+	private final JTable table;
 
     public T1Data() {
         super(new BorderLayout(3, 3));
