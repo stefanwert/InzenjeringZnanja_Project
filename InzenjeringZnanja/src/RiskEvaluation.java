@@ -1,16 +1,19 @@
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+
+import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.JFuzzyLogic;
+import net.sourceforge.jFuzzyLogic.rule.Variable;
 
 public class RiskEvaluation  extends JDialog{
 
@@ -60,15 +63,20 @@ public class RiskEvaluation  extends JDialog{
 	private JRadioButton high6= new JRadioButton("HIGH");
 	private JRadioButton none6= new JRadioButton("NONE");
 	
+	private JTextArea resultTA;
+	
+	private JButton calculateButton;
+	private JButton cancelButton;
+	
 	public RiskEvaluation() {
-		setTitle("Risk evaluation ");
-		this.setSize(new Dimension(560,500));
-		setLocationRelativeTo(null);
+		setTitle("Risk evaluation");
+		JPanel forButtons = new JPanel();
+		
 		setModal(true);
+		this.setSize(560, 700);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
-		BoxLayout b = new BoxLayout(panel, BoxLayout.Y_AXIS);
-		//panel.setLayout(b);
 		panel.setBackground(Color.LIGHT_GRAY);
 		access_vector.add(local);
 		access_vector.add(remote);
@@ -174,9 +182,31 @@ public class RiskEvaluation  extends JDialog{
 		p9.setBackground(Color.LIGHT_GRAY);
 		panel.add(p9);
 		
-		JButton show = new JButton("Show");
-		panel.add(show);
-		show.addActionListener(new ActionListener() {
+		resultTA = new JTextArea(16, 50);
+		resultTA.setLineWrap(true);
+		resultTA.setText("Results will appear here...");
+		resultTA.setEditable(false);
+		resultTA.setFont(new Font("Arial", 2, 12));
+		
+		panel.add(resultTA);
+		
+		calculateButton = new JButton("Calculate");
+		cancelButton = new JButton("Cancel");
+		
+		forButtons.add(calculateButton);
+		forButtons.add(cancelButton);
+		panel.add(forButtons);
+		
+		cancelButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				dispose();
+			}
+		});
+		
+		calculateButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -251,23 +281,45 @@ public class RiskEvaluation  extends JDialog{
 					arg[8] = 0.27;
 				}
 				
-				
-				
 				// TODO Auto-generated method stub
-				String[] strings = {"-e","src//RiskOfVulnerability.fcl.txt"
-						,Double.toString(arg[1]),//dobro je
-						Double.toString(arg[0]),//dobro je
-						Double.toString(arg[7]),//dobro je
-						Double.toString(arg[4])	//dobro je
-						,Double.toString(arg[6])//
-						,Double.toString(arg[2])//dobro je
-						,Double.toString(arg[3])//dobro je
-						,Double.toString(arg[8])//dobro je 
-						,Double.toString(arg[5])};//dobro je
+				String[] strings = {"-noCharts", "-e", "src//RiskOfVulnerability.fcl.txt",
+						Double.toString(arg[1]),
+						Double.toString(arg[0]),
+						Double.toString(arg[7]),
+						Double.toString(arg[4]),
+						Double.toString(arg[6]),
+						Double.toString(arg[2]),
+						Double.toString(arg[3]),
+						Double.toString(arg[8]),
+						Double.toString(arg[5])};
 		 		JFuzzyLogic f2 = new JFuzzyLogic(strings);
 		 		f2.run();
-		 		setVisible(false); //you can't see me!
-		 		dispose(); //Destroy the JFrame object
+		 		FIS fis = f2.getFis();
+		 		Variable accessVector = fis.getVariable("access_vector");
+		 		Variable accessComplexity = fis.getVariable("access_complexity");
+		 		Variable confidentialityImpact = fis.getVariable("confidentiality_impact");
+		 		Variable integrityImpact = fis.getVariable("integrity_impact");
+		 		Variable availabilityImpact = fis.getVariable("availability_impact");
+		 		Variable reportConfidence = fis.getVariable("report_confidence");
+		 		Variable collateralDamagePotential = fis.getVariable("collateral_damage_potential");
+		 		Variable attackComplexity = fis.getVariable("attack_complexity");
+		 		Variable privilegesRequired = fis.getVariable("privileges_required");
+		 		Variable riskOfVulnerability = fis.getVariable("risk_of_vulnerability");
+		 		
+		 		resultTA.setText("");
+		 		resultTA.append("----------------------------------------------------------------------------------------------------------------------------\n");
+		 		resultTA.append("Risk of vulnerability is " + riskOfVulnerability.getValue() + ".\n\n\n");
+		 		resultTA.append("[DETAILED OUTPUT]\n\n");
+		 		resultTA.append("Access Vector -> " + accessVector.getValue() + "\n");
+		 		resultTA.append("Access Complexity -> " + accessComplexity.getValue() + "\n");
+		 		resultTA.append("Confidentiality Impact -> " + confidentialityImpact.getValue() + "\n");
+		 		resultTA.append("Integrity Impact -> " + integrityImpact.getValue() + "\n");
+		 		resultTA.append("Availability Impact -> " + availabilityImpact.getValue() + "\n");
+		 		resultTA.append("Report Confidence -> " + reportConfidence.getValue() + "\n");
+		 		resultTA.append("Collateral Damage Potential -> " + collateralDamagePotential.getValue() + "\n");
+		 		resultTA.append("Attack Complexity -> " + attackComplexity.getValue() + "\n");
+		 		resultTA.append("Privileges Required -> " + privilegesRequired.getValue() + "\n");
+		 		resultTA.append("----------------------------------------------------------------------------------------------------------------------------");
 			}
 		});
 		this.add(panel);
