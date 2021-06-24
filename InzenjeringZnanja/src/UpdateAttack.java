@@ -5,10 +5,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -22,10 +26,14 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.update.UpdateAction;
+
 public class UpdateAttack extends JDialog {
 
-	private static final long serialVersionUID = 4980753439575514620L;
-	
 	private JButton updateButton;
 	private JButton cancelButton;
 	private JButton automaticFill;
@@ -81,6 +89,16 @@ public class UpdateAttack extends JDialog {
             String errmsg = e.getMessage();
             System.out.println("File not found: " + errmsg);
         } 
+		
+		final Model model = ModelFactory.createDefaultModel();
+		
+		try {
+			InputStream is = new FileInputStream("src\\attacks.ttl");
+			RDFDataMgr.read(model, is, Lang.TURTLE);
+			is.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		nameCB.setSelectedIndex(-1);
 		
@@ -176,6 +194,61 @@ public class UpdateAttack extends JDialog {
 					return;
 				}
 				
+				String deleteString = ""
+		        		+ "PREFIX foaf: <https://github.com/stefanwert/InzenjeringZnanja_Project#>"
+		        		+ "DELETE "
+		        		+ "WHERE {"
+		        		+ "		?foaf foaf:name" + "\"" + nameCB.getSelectedItem().toString().replaceAll("\\s+","") + "\"" + ";" 
+		        		+ "}";
+				
+		        UpdateAction.parseExecute(deleteString, model);
+		        
+		        OutputStream outputStream = null;
+				try {
+					outputStream = new FileOutputStream("src\\attacks.ttl");
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				RDFDataMgr.write(outputStream, model, Lang.TURTLE);
+				try {
+					outputStream.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		        
+		        String insertString = ""
+						+ "PREFIX foaf: <https://github.com/stefanwert/InzenjeringZnanja_Project#>"
+						+ "INSERT DATA {"
+						+ "		foaf:" + nameCB.getSelectedItem().toString().replaceAll("\\s+","") + " a foaf:Attack; "
+						+ "		foaf:name \"" + nameCB.getSelectedItem().toString() + "\"; "
+						+ "		foaf:parent_of \"" + parentOfTF.getText() + "\"; "
+						+ "		foaf:can_follow \"" + canFollowTF.getText() + "\"; "
+						+ "		foaf:domains_od_attacks \"" + selectedDomainOfAttack + "\"; "
+						+ "		foaf:mitigations \"" + mitigationsTA.getText() + "\";  "
+						+ "		foaf:weaknesses \"" + weaknessTA.getText() + "\". "
+						+ "}";
+		        
+		        UpdateAction.parseExecute(insertString, model);
+		        
+				try {
+					outputStream = new FileOutputStream("src\\attacks.ttl");
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				RDFDataMgr.write(outputStream, model, Lang.TURTLE);
+				try {
+					outputStream.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		        
+				//printStatements(model);
 
 				File stariFajl = new File("src\\attacks.csv");
 				File tempFile = null;
