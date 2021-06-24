@@ -6,7 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -18,6 +24,12 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.update.UpdateAction;
 
 public class AddingNewAttack extends JDialog {
 
@@ -122,6 +134,16 @@ public class AddingNewAttack extends JDialog {
 		File attacks = new File("src\\attacks.csv");
 		final ArrayList<String[]> procitano = readingCSVFile.ReadCSVfile(attacks);
 		
+		final Model model = ModelFactory.createDefaultModel();
+		
+		try {
+			InputStream is = new FileInputStream("src\\attacks.ttl");
+			RDFDataMgr.read(model, is, Lang.TURTLE);
+			is.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		applyButton.addActionListener(new ActionListener() {
 			
 			@Override
@@ -195,6 +217,36 @@ public class AddingNewAttack extends JDialog {
 				
 				if(weaknessTA.getText().isEmpty())
 					weaknessTA.setText("None");
+				
+				String insertString = ""
+						+ "PREFIX foaf: <https://github.com/stefanwert/InzenjeringZnanja_Project#>"
+						+ "INSERT DATA {"
+						+ "		foaf:" + nameTF.getText().replaceAll("\\s+","") + " a foaf:Attack; "
+						+ "		foaf:name \"" + nameTF.getText() + "\"; "
+						+ "		foaf:parent_of \"" + parentOfTF.getText() + "\"; "
+						+ "		foaf:can_follow \"" + canFollowTF.getText() + "\"; "
+						+ "		foaf:domains_od_attacks \"" + selectedDomainOfAttack + "\"; "
+						+ "		foaf:mitigations \"" + mitigationsTA.getText() + "\"; "
+						+ "		foaf:weaknesses \"" + weaknessTA.getText() + "\". "
+						+ "}";
+				
+				UpdateAction.parseExecute(insertString, model);
+				//printStatements(model);
+				OutputStream outputStream = null;
+				try {
+					outputStream = new FileOutputStream("src\\attacks.ttl");
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				RDFDataMgr.write(outputStream, model, Lang.TURTLE);
+				try {
+					outputStream.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 				try(FileWriter fw = new FileWriter("src\\attacks.csv", true);
 					BufferedWriter bw = new BufferedWriter(fw);
